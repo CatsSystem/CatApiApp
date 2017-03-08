@@ -3,7 +3,7 @@ Swoole Http API 应用
 
 ## 依赖
 
-[CatApi](https://github.com/CatSyatem/CatApi)
+[CatApi](https://github.com/CatsSystem/CatApi)
 
 
 ## 安装
