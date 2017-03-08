@@ -6,7 +6,7 @@
  * Time: 上午11:03
  */
 
-namespace server;
+namespace app\server;
 
 use base\Entrance;
 use base\framework\Route;

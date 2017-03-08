@@ -9,7 +9,7 @@
 namespace api\module\admin;
 
 use base\framework\BaseController;
-use common\Error;
+use app\common\Error;
 
 class Console extends BaseController
 {

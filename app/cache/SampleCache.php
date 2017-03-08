@@ -7,8 +7,8 @@
  */
 namespace cache;
 
-use common\Constants;
-use common\Error;
+use app\common\Constants;
+use app\common\Error;
 use core\component\cache\ILoader;
 use core\concurrent\Promise;
 

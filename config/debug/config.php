@@ -12,7 +12,7 @@ return array(
         'project_name'      => 'micro_service',
 
         'ctrl_path'         => 'api\\module',
-        'main_callback'     => '\\server\\HttpServer',
+        'main_callback'     => "app\\server\\HttpServer",
     ),
 
     'server' => array(

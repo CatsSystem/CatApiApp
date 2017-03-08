@@ -6,7 +6,7 @@
  * Time: 上午1:34
  */
 
-namespace common;
+namespace app\common;
 
 class Constants extends \core\common\Constants
 {

@@ -6,7 +6,7 @@
  * Time: 下午2:48
  */
 
-namespace common;
+namespace app\common;
 
 
 class Error extends \core\common\Error

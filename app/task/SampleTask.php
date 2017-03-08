@@ -6,7 +6,7 @@
  * Time: 下午4:03
  */
 
-namespace task;
+namespace app\task;
 
 use common\Error;
 use core\component\task\IRunner;
