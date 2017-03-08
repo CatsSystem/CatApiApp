@@ -89,3 +89,15 @@ php run.php start
 php run.php start -c release
 ```
 指定配置文件目录
+
+## 请求方式
+
+请求使用Http POST方式, 参数格式为JSON编码, `Content-Type`限定为`application/json`
+
+访问地址格式为: `http://ip:port/module/controller/method`
+
+`module`为模块名
+`controller`为控制器名
+`method`为方法名
+
+路由配置在`route.php`配置文件中
