@@ -86,6 +86,6 @@ php run.php start
 
 执行以下命令
 ```bash
-php start.php start -c release
+php run.php start -c release
 ```
 指定配置文件目录
