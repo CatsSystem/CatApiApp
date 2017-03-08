@@ -1,0 +1,19 @@
+{
+    "name": "cat-sys/cat-api-app",
+    "description": "Cat Http API Application",
+    "authors": [
+        {
+            "name": "lidanyang",
+            "email": "lancelot2014@foxmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "cat-sys/cat-api": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "\\":"app/"
+        }
+    }
+}
