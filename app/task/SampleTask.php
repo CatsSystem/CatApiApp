@@ -8,7 +8,7 @@
 
 namespace app\task;
 
-use common\Error;
+use app\common\Error;
 use core\component\task\IRunner;
 
 class SampleTask extends IRunner
