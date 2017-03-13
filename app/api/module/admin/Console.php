@@ -6,7 +6,7 @@
  * Time: 22:01
  */
 
-namespace api\module\admin;
+namespace app\api\module\admin;
 
 use base\framework\BaseController;
 use app\common\Error;
@@ -20,10 +20,10 @@ class Console extends BaseController
 
     public function stats()
     {
-        $this->request->callback([
+        return [
             'code'  => Error::SUCCESS,
             'data'  => $this->request->getSocket()->stats()
-        ]);
+        ];
     }
 
     public function shutdown()

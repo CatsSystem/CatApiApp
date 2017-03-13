@@ -73,7 +73,15 @@ class HttpServer extends BaseCallback
         try {
             $result = yield Route::route($handle);
             $response->header('Content-Type', 'application/json');
-            $response->end(json_encode($result, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));
+
+            if( is_array($result) ) {
+                $result = json_encode($result, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+            } else if( !is_string($result) ) {
+                $response->status(503);
+                $response->end(var_export($result, true));
+                return;
+            }
+            $response->end($result);
         } catch ( \Exception $e ) {
             Log::ERROR('Exception', var_export($e, true));
             $response->status(502);
