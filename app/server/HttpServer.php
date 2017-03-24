@@ -23,7 +23,7 @@ class HttpServer extends BaseCallback
     public function onWorkerStart($server, $workerId)
     {
         // 加载配置
-        Config::load(Entrance::$rootPath . '/config');
+        Config::load(Entrance::$configPath);
 
         // 初始化连接池
         PoolManager::getInstance()->init('mysql_master');
