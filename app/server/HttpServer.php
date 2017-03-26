@@ -24,7 +24,7 @@ class HttpServer extends BaseCallback
     public function onWorkerStart($server, $workerId)
     {
         // 加载配置
-        Config::load(Entrance::$rootPath . '/config');
+        Config::load(Entrance::$configPath);
 
         // 初始化连接池
         PoolManager::getInstance()->init('mysql_master');
@@ -82,7 +82,15 @@ class HttpServer extends BaseCallback
         try {
             $result = yield Route::route($handle);
             $response->header('Content-Type', 'application/json');
-            $response->end(json_encode($result, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));
+
+            if( is_array($result) ) {
+                $result = json_encode($result, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+            } else if( !is_string($result) ) {
+                $response->status(503);
+                $response->end(var_export($result, true));
+                return;
+            }
+            $response->end($result);
         } catch ( \Exception $e ) {
             Log::ERROR('Exception', var_export($e, true));
             $response->status(502);

@@ -6,7 +6,7 @@
  * Time: 上午11:08
  */
 
-namespace api\module\home;
+namespace app\api\module\home;
 
 use base\framework\BaseController;
 use core\common\Globals;
@@ -26,7 +26,7 @@ class Api extends BaseController
     public function testApi()
     {
         $redis_result = yield $this->redis_pool->pop()->get('cache');
-        Globals::var_dump($redis_result);
+        Globals::var_dump($redis_result['data']);
         return $redis_result;
     }
 

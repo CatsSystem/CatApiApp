@@ -7,11 +7,13 @@
  */
 
 return array(
+    'debug' => true,
+
     'project'=>array(
         'pid_path'          => __DIR__ . '/../../',
         'project_name'      => 'micro_service',
 
-        'ctrl_path'         => 'api\\module',
+        'ctrl_path'         => 'app\\api\\module',
         'main_callback'     => "app\\server\\HttpServer",
     ),
 
