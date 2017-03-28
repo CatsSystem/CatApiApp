@@ -5,7 +5,7 @@
  * Date: 16/12/15
  * Time: 上午12:28
  */
-namespace cache;
+namespace app\cache;
 
 use app\common\Constants;
 use app\common\Error;

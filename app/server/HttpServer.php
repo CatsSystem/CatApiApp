@@ -38,10 +38,10 @@ class HttpServer extends BaseCallback
             $cache_config['cache_path']);
     }
 
-    public function before_start()
+    public function beforeStart()
     {
         // 打开内存Cache进程
-        $this->open_cache_process(function(){
+        $this->openCacheProcess(function(){
             Globals::$server = SwooleServer::getInstance()->getServer();
             Globals::setProcessName(Config::getField('project', 'project_name') . 'cache process');
             $cache_config = Config::getField('component', 'cache');

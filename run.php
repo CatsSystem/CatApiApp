@@ -41,7 +41,7 @@ switch($cmd)
 
         shell_exec("kill -15 `cat {$manager_pid_path}`");
         shell_exec("kill -15 `cat {$pid_path}`");
-        echo "restarting...";
+        echo "restarting...\n";
         sleep(3);
         require_once 'main.php';
         break;
