@@ -7,9 +7,8 @@
             "email": "lancelot2014@foxmail.com"
         }
     ],
-    "minimum-stability": "dev",
     "require": {
-        "cat-sys/cat-api": "dev-master"
+        "cat-sys/cat-api": "v0.1.0"
     },
     "autoload": {
         "psr-4": {

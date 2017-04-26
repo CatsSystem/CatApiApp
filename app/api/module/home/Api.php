@@ -8,9 +8,12 @@
 
 namespace app\api\module\home;
 
+use app\common\Error;
 use base\framework\BaseController;
 use core\common\Globals;
 use core\component\pool\PoolManager;
+use core\component\task\AsyncTask;
+use Redis;
 
 class Api extends BaseController
 {
@@ -25,14 +28,19 @@ class Api extends BaseController
 
     public function testApi()
     {
-        $redis_result = yield $this->redis_pool->pop()->get('cache');
-        Globals::var_dump($redis_result['data']);
+        $redis_result = yield $this->redis_pool->pop()->multi(Redis::PIPELINE);
+        if($redis_result['code'] != Error::SUCCESS)
+        {
+            return $this->error($redis_result['code']);
+        }
         return $redis_result;
     }
 
     public function testMulti()
     {
-
+        $task = new AsyncTask("SampleTask");
+        $result = yield $task->sample_task("hello", 1);
+        return $result;
     }
 
     public function testCache()
